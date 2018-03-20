@@ -1,4 +1,4 @@
-RSpec.describe 'AcebookLegacy App' do
+RSpec.describe 'AcebookLegacy Api' do
   include Rack::Test::Methods
 
   def app
@@ -9,7 +9,7 @@ RSpec.describe 'AcebookLegacy App' do
     User.create(name: 'test', email: 'test@test.com', password: 'secret')
   end
 
-  desscribe 'Api' do
+  describe 'get users' do
 
     it "returns users" do
       get '/api/users'
