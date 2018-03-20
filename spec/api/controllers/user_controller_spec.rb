@@ -13,6 +13,7 @@ RSpec.describe 'AcebookLegacy Api' do
 
     it "returns users" do
       get '/api/users'
+
       expect(last_response).to be_ok
 
       parsed = JSON.parse(last_response.body).first

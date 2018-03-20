@@ -1,7 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require './spec/support/database_cleaner'
-require './spec/support/rack_test'
+Dir["./spec/support/*.rb"].each {|file| require file }
 
 require './app'
 
