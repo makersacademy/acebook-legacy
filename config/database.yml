@@ -1,19 +1,21 @@
-development:
+default: &default
   adapter: postgresql
   encoding: unicode
-  database: acebook_legacy_develpment
-  pool: 2
+  host: db
+  username: postgres
+  password:
+  pool: 5
+
+development:
+  <<: *default
+  database: myapp_develpment
 
 test:
-  adapter: postgresql
-  encoding: unicode
-  database: acebook_legacy_test
-  pool: 2
+  <<: *default
+  database: myapp_test
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  <<: *default
   host: <%= ENV['DATABASE_HOST'] %>
   database: <%= ENV['DATABASE_NAME'] %>
   username: <%= ENV['DATABASE_USER'] %>
